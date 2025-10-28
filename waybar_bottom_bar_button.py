@@ -1,7 +1,7 @@
 import subprocess
 
 def main():
-    cache = "/home/ranger/Scripts/cache.txt"
+    cache = "/home/ranger/Github/Scripts/cache.txt"
     with open(cache, 'r') as file_cache:
         BoolValue = file_cache.readline().strip()
         if BoolValue == "false":
