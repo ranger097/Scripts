@@ -9,7 +9,7 @@ def main():
             
             subprocess.Popen(["pkill" , "waybar"])
             sleep(0.1)
-            subprocess.Popen(["waybar", "-c", "/home/ranger/.config/waybar/side_bar_right.jsonc", "-s", "/home/ranger/.config/waybar/side_bar_right.css"])
+            subprocess.Popen(["waybar", "-c", "/home/ranger/.config/waybar/side_bar_right.jsonc", "-s", "/home/ranger/.config/waybar/side_bar.css"])
             
             with open(cache, 'r') as file_cache:
                 BoolValue = file_cache.readline().strip()

@@ -1,11 +1,15 @@
 import subprocess
+from time import sleep
 
 def main():
-    cache = "/home/ranger/Github/Scripts/cache.txt"
+    cache = "/home/ranger/Github/Scripts/cache6.txt"
     with open(cache, 'r') as file_cache:
         BoolValue = file_cache.readline().strip()
         if BoolValue == "false":
-            subprocess.Popen(["waybar", "-c", "/home/ranger/.config/waybar/bottom_bar.jsonc", "-s", "/home/ranger/.config/waybar/bottom_bar.css"])
+            sleep(0.1)
+            subprocess.Popen(["pkill" , "rofi"])
+            
+           
             with open(cache, 'r') as file_cache:
                 BoolValue = file_cache.readline().strip()
                 BoolValue = "true"
@@ -14,8 +18,9 @@ def main():
                 file_cache.writelines(BoolValue)
 
         elif BoolValue == "true":
-            subprocess.run(["pkill", "waybar"])
-            #subprocess.Popen(["waybar", "-c", "/home/ranger/.config/waybar/config.jsonc", "-s", "/home/ranger/.config/waybar/style.css"])
+            
+            sleep(0.1)
+            subprocess.Popen(["rofi","-show","drun"])
             with open(cache, 'r') as file_cache:
                 BoolValue = file_cache.readline().strip()
                 BoolValue = "false"
